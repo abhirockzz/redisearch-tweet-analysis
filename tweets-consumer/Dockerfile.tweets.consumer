@@ -1,0 +1,16 @@
+FROM golang as build-stage
+WORKDIR /app
+
+COPY go.mod /app
+COPY go.sum /app
+RUN go mod download
+
+ADD index/ /app/index
+ADD twitter/ /app/twitter
+COPY main.go /app
+
+RUN cd /app && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o tweets-consumer
+
+FROM alpine
+COPY --from=build-stage /app/tweets-consumer /
+CMD ["/tweets-consumer"]

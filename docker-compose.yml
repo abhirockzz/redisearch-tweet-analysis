@@ -1,0 +1,20 @@
+version: "2"
+services:
+  tweets-search:
+    image: abhirockzz/redisearch-tweets-search
+    ports:
+      - 80:80
+    environment:
+      - REDIS_HOST=<azure redis host name>
+      - REDIS_PASSWORD=<azure redis access key>
+      - REDISEARCH_INDEX_NAME=tweets-index
+  tweets-indexer:
+    image: abhirockzz/redisearch-tweets-consumer
+    environment:
+      - TWITTER_CONSUMER_KEY=<twitter api consumer key>
+      - TWITTER_CONSUMER_SECRET_KEY=<twitter api consumer secret>
+      - TWITTER_ACCESS_TOKEN=<twitter api access token>
+      - TWITTER_ACCESS_SECRET_TOKEN=<twitter api access secret>
+      - REDIS_HOST=<azure redis host name>
+      - REDIS_PASSWORD=<azure redis access key>
+      - REDISEARCH_INDEX_NAME=tweets-index

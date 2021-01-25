@@ -1,4 +1,4 @@
-# redisearch
+# RediSearch in Action
 
 [Redis](http://redis.io/) has a [versatile set of data structures](https://redis.io/topics/data-types-intro) ranging from simple [Strings](https://redis.io/topics/data-types-intro#redis-strings), all the way to powerful abstractions such as [Redis Streams](https://redis.io/topics/streams-intro). The native data types can get you quite far, but there are certain use cases where you have to resort to workarounds. One such example is the requirement of using secondary indexes in Redis in order go beyond the *key* based search/lookup for richer query capabilities. By all means, you can [use sorted Sets, Lists etc. to get the job done](https://redis.io/topics/indexes), but there are trade-offs you need to factor in. 
 

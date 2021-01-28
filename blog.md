@@ -15,7 +15,6 @@ This blog post demonstrates a practical example on how to use RediSearch with [A
 You will learn how to:
 
 - Work with RediSearch indexes
-- Use new Redis 2.0 feature to create data in way that is seamlessly indexed by RediSearch
 - Use different RediSearch data types such as `TEXT`, `NUMERIC`, `TAG` etc.
 - How to build an application to expose RediSearch capabilities
 - How to deploy the service components to Azure with just a few commands
@@ -23,11 +22,11 @@ You will learn how to:
 
 ## Redis Enterprise tiers on Azure Cache for Redis
 
-Redis Enterprise is available in the form of [two new tiers on Azure Cache for Redis](https://redislabs.com/blog/announcing-public-preview-of-redis-enterprise-on-azure-cache/), allowing developers access to a rich set of modules including RediSearch, which is the key focus of this blog. This is part of a native Azure service that is operated and supported by Microsoft. At the time of writing, this feature is available in *Preview* mode. For more information I would recommend referring to the following resources:
+Redis Enterprise is available as a native service on Azure in the form of [two new tiers for Azure Cache for Redis](https://aka.ms/azure-redis-enterprise-tiers) which are operated and supported by Microsoft. This service allows developers access to a rich set of Redis Enterprise features, including modules like RediSearch, which is the key focus of this blog. At the time of writing, this feature is available in *Preview* mode. For more information I would recommend referring to the following resources:
 
 - [Deepening Our Partnership with Microsoft to Grow Redis Enterprise in the Cloud](https://redislabs.com/blog/microsoft-partnership-redis-enterprise-cloud/)
-- [Microsoft and Redis Labs collaborate to give developers new Azure Cache for Redis capabilities](https://azure.microsoft.com/en-us/blog/microsoft-and-redis-labs-collaborate-to-give-developers-new-azure-cache-for-redis-capabilities/)
-- [Redis Enterprise features on Azure Cache for Redis](https://azure.microsoft.com/en-in/updates/)redis-enterprise-features-on-azure-cache-for-redis-coming-soon/)
+- [Microsoft and Redis Labs collaborate to give developers new Azure Cache for Redis capabilities](https://azure.microsoft.com/blog/microsoft-and-redis-labs-collaborate-to-give-developers-new-azure-cache-for-redis-capabilities/)
+- [Redis Enterprise features on Azure Cache for Redis](https://azure.microsoft.com/updates/redis-enterprise-features-on-azure-cache-for-redis-coming-soon/)
 
 ## Application overview
 
@@ -255,7 +254,6 @@ These were just a few examples. Feel free to experiment further and try out othe
 docker compose down -p azure-redisearch-app
 ```
 
-Use the Azure Portal to delete the Azure Redis instance] - https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-go-get-started#clean-up-resources
 Use the Azure Portal to [delete the Azure Redis instance](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-go-get-started?WT.mc_id=data-13024-abhishgu#clean-up-resources) that you had created.
 
 ## Code walk through

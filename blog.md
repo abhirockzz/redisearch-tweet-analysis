@@ -32,16 +32,16 @@ Redis Enterprise is available as a native service on Azure in the form of [two n
 
 As mentioned earlier, the service lets you consume tweets in real-time and makes them available for querying via RediSearch. 
 
-TODO diagram
+![](diagram.png)
 
 It has two components:
 
-- Consumer/Indexer: Reads from the [Twitter Streaming API](), creates the index and continuously adds tweets data (in Redis `HASH`es) as they arrive.
+- Consumer/Indexer: Reads from the Twitter Streaming API, creates the index and continuously adds tweets data (in Redis `HASH`es) as they arrive.
 - Search service: A REST API that allows you to search tweets using the RediSearch [query syntax](https://oss.redislabs.com/redisearch/Query_Syntax/)
 
 At this point, I am going to dive into how to get the solution up and running so that you can see it in action. However, if you're interested in understanding how the individual components work, please refer to the **Code walk through** section. 
 
-> The code for this blog is available on Github TODO link
+> Here is the GitHub repo for this blog - https://github.com/abhirockzz/redisearch-tweet-analysis
 
 ## Pre-requisites
 
@@ -107,8 +107,8 @@ docker context use aci-context
 Clone the GitHub repo:
 
 ```bash
-git clone TODO
-cd TODO
+git clone https://github.com/abhirockzz/redisearch-tweet-analysis
+cd redisearch-tweet-analysis
 ```
 
 Deploy both the service components as part of a [Container group](https://docs.microsoft.com/azure/container-instances/container-instances-container-groups?WT.mc_id=data-13024-abhishgu):
